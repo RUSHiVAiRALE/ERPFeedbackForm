@@ -73,8 +73,8 @@ const InstituitionalFeed = () => {
                     <button id="sendLetter">Send</button>
                     </p>
                 </div> */}
-                <div class="envelope front"></div>
-            <div class="envelope back"></div>
+                {/* <div class="envelope front"></div>
+            <div class="envelope back"></div> */}
         </div>
     );
 }
