@@ -6,8 +6,7 @@ import InstitutionalFeed from './components/InstiFeed';
 import GuestFeed from './components/GuestFteed';
 
 function App() {
-  let question = "How was the session?"
-  let question1 = "Was the session helpfull?"
+
   return (
     <Routes>
       <Route path="/" element= {<InstitutionalFeed/>}/>
