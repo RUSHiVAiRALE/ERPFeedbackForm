@@ -108,11 +108,13 @@
 import React, { useState } from "react";
 import QuestionRadioGroup from "./QuestionRadioGroup";
 import "../App.css";
+import {useNavigate } from "react-router-dom";
 
 const InstitutionalFeed = () => {
 
     const [form, setForm] = useState({});
-    
+    const navigate = useNavigate();
+
     const qArray = [
         "How would you rate your overall satisfaction with the program/institution so far?",
         "How would you rate the quality of instruction and teaching during your time in the program/institution?",
@@ -154,6 +156,7 @@ const InstitutionalFeed = () => {
             }
         });
         const data = response;
+        navigate("/success");
         console.log(data);
     };
 
