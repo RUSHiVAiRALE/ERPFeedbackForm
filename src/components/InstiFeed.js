@@ -123,19 +123,18 @@ const InstitutionalFeed = () => {
     ];
 
     const handleForm = (e) => {
-        // const name = e.target.name;
-        // const value = e.target.value;
-        const {name , value} = e.target;
-        setForm({
-            ...form,
-            [name]:value,
-        });
-        // setForm((values) => ({
-        //     ...values,
-        //     [name]: value
-        // }));
-        // console.log(e.target.name,e.target.value);
-        // console.log(e);
+        const name = e.target.name;
+        const value = e.target.value;
+        // const {name , value} = e.target;
+        // setForm({
+        //     ...form,
+        //     [name]:value,
+        // });
+        setForm((values) => ({
+            ...values,
+            [name]: value
+        }));
+        // console.log(form);
 
     };
 
@@ -144,15 +143,12 @@ const InstitutionalFeed = () => {
         e.preventDefault();
         console.log(form);
 
-        const body = {
-            question: form.question,
-            answer: form.answer,
-        }
+        
 
         const response = await fetch("http://localhost:5656/demo", {
             method: "POST",
             // body: JSON.stringify(body),
-            body: "Data ... {Anurag}",
+            body: JSON.stringify(form),
             headers: {
                 'Content-Type': 'application/json'
             }
