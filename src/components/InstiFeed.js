@@ -145,8 +145,6 @@ const InstitutionalFeed = () => {
         e.preventDefault();
         console.log(form);
 
-        
-
         const response = await fetch("http://localhost:5656/demo", {
             method: "POST",
             // body: JSON.stringify(body),
