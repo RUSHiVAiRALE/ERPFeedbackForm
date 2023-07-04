@@ -17,7 +17,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 
 form {
@@ -47,7 +46,7 @@ h4 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 65%;
+  width: 80%;
 }
 
 .ques_radios {
@@ -88,52 +87,115 @@ span>h4 {
 }
 
 @media screen and (max-width: 480px) {
-  .ques_radios{
+  .ques_radios {
     width: 350px;
   }
-  .btns{
+
+  .btns {
     flex-direction: column;
     align-items: baseline;
   }
-  form{
-    padding: 5px 10px ;
+
+  form {
+    padding: 5px 10px;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .ques_radios{
+  .ques_radios {
     width: 90%;
   }
-  .btns{
+
+  .btns {
     flex-direction: column;
     align-items: baseline;
   }
-  form{
+
+  form {
     width: 90%;
-    padding: 5px 10px ;
+    padding: 5px 10px;
   }
 }
 
- /* Extra small devices (phones, 600px and down) */
- @media only screen and (max-width: 600px) {
-  .ques_radios{
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .ques_radios {
     width: 90%;
   }
-  .btns{
+
+  .btns {
     width: 80%;
   }
-  form{
+
+  form {
     width: 90%;
   }
- }
- /* @media only screen and (min-width: 600px) {
-  .ques_radios{
-    width: 90%;
-  }
-  .btns{
-    width: 95%;
-  }
-  form{
-    width: 90%;
-  }
- } */
+}
+
+.cards {
+  width: 80%;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-around; */
+  flex-flow:row wrap;
+}
+
+.card {
+  width: 350px ;
+  height: 250px ;
+  margin: 20px ;
+  border-radius: 10px;
+  background: linear-gradient(rgb(239, 223, 255) 80%, #ffffff );
+  border: 1px rgb(168, 168, 168) groove;
+  box-shadow: 0px 5px 10px 0px rgba(155, 155, 155, 0.568), 5px 5px 0px 0px rgba(76, 76, 76, 0.568);
+}
+.card:hover{
+  cursor:pointer;
+  /* Keyword values */
+transform: none;
+
+/* Function values */
+/* transform: matrix(1, 2, 3, 4, 5, 6); */
+transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+/* transform: perspective(17px); */
+/* transform: rotate(0.5turn); */
+/* transform: rotate3d(1, 2, 3, 10deg); */
+/* transform: rotateX(10deg); */
+/* transform: rotateY(10deg); */
+/* transform: rotateZ(10deg); */
+/* transform: translate(12px, 50%); */
+/* transform: translate3d(12px, 50%, 3em); */
+/* transform: translateX(2em); */
+/* transform: translateY(3in); */
+/* transform: translateZ(2px); */
+/* transform: scale(2, 0.5); */
+/* transform: scale3d(2.5, 1.2, 0.3); */
+/* transform: scaleX(2); */
+/* transform: scaleY(0.5); */
+/* transform: scaleZ(0.3); */
+/* transform: skew(30deg, 20deg); */
+/* transform: skewX(30deg); */
+/* transform: skewY(1.07rad); */
+
+/* Multiple function values */
+/* transform: translateX(10px) rotate(10deg) translateY(5px); */
+/* transform: perspective(500px) translate(10px, 0, 20px) rotateY(3deg); */
+}
+
+.card>h3 {
+  height: 20%;
+  margin: 0;
+  text-align: center;
+  color: rgb(38, 38, 38);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card>img {
+  border-radius: 15px 15px 0px 0px;
+  width: 100%;
+  height: 80%;
+  /* background-color: #cec4d9; */
+}

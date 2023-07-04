@@ -10,6 +10,7 @@ const QuestionRadioGroup = ({ question, handleForm }) => {
                         id={`${question}-1`}
                         value="Good"
                         onChange={handleForm}
+                        required
                     />
                     <label className="form-check-label" htmlFor={`${question}-1`}>
                         Good
@@ -23,6 +24,7 @@ const QuestionRadioGroup = ({ question, handleForm }) => {
                         id={`${question}-2`}
                         value="Better"
                         onChange={handleForm}
+                        required
                     />
                     <label className="form-check-label" htmlFor={`${question}-2`}>
                         Better
@@ -36,6 +38,7 @@ const QuestionRadioGroup = ({ question, handleForm }) => {
                         id={`${question}-3`}
                         value="Best"
                         onChange={handleForm}
+                        required
                     />
                     <label className="form-check-label" htmlFor={`${question}-3`}>
                         Best
@@ -49,6 +52,7 @@ const QuestionRadioGroup = ({ question, handleForm }) => {
                         id={`${question}-4`}
                         value="Excellent"
                         onChange={handleForm}
+                        required
                     />
                     <label className="form-check-label" htmlFor={`${question}-4`}>
                         Excellent
