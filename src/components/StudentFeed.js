@@ -1,5 +1,7 @@
 import '../App.css'
-import React from "react";
+import React, { useState,useEffect } from "react";
+import {useNavigate,useLocation } from "react-router-dom";
+import axios from "axios";
 let count = 1;
 const CreateQue = (question, c) => {
     return (
@@ -29,18 +31,30 @@ const CreateQue = (question, c) => {
 
 
 const StudentFeed = () => {
-    const qArray = [
-        "What is your name and what company/organization do you represent?",
-        "What was the topic of your presentation?",
-        "How would you rate the overall organization and communication leading up to the event?",
-        "How would you rate the quality of the venue and technology used during the event?",
-        "How would you rate the audience engagement and participation during your presentation?",
-        // "How would you rate the overall format and schedule of the event?",
-        // "How would you rate the overall quality of the questions asked by the audience?",
-        // "How would you rate the support provided by the event organizers during your presentation?",
-        // "How would you rate the length of time allotted for your presentation?",
-        // "How would you rate the catering and refreshments provided during the event?",
-    ]
+    // const qArray = [
+    //     "What is your name and what company/organization do you represent?",
+    //     "What was the topic of your presentation?",
+    //     "How would you rate the overall organization and communication leading up to the event?",
+    //     "How would you rate the quality of the venue and technology used during the event?",
+    //     "How would you rate the audience engagement and participation during your presentation?",
+    //     // "How would you rate the overall format and schedule of the event?",
+    //     // "How would you rate the overall quality of the questions asked by the audience?",
+    //     // "How would you rate the support provided by the event organizers during your presentation?",
+    //     // "How would you rate the length of time allotted for your presentation?",
+    //     // "How would you rate the catering and refreshments provided during the event?",
+    // ]
+
+    const [qArray,setqArray] = useState([]);
+    const loc = useLocation();
+    let feedTypeName=loc.pathname.split("/")[1];
+
+    useEffect(()=>{
+        axios
+            .get("http://localhost:5656/getQarray/"+feedTypeName)
+            .then(res=>{
+                setqArray(res.data)
+            });
+    },qArray)
 
     return (
         <div >

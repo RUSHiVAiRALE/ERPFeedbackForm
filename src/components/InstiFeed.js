@@ -105,24 +105,35 @@
 
 
 
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import QuestionRadioGroup from "./QuestionRadioGroup";
 import "../App.css";
-import {useNavigate } from "react-router-dom";
+import {useNavigate,useLocation } from "react-router-dom";
+import axios from "axios";
 
 const InstitutionalFeed = () => {
-
+    
+    const [qArray,setqArray] = useState([]);
     const [form, setForm] = useState({});
     const navigate = useNavigate();
+    const loc = useLocation();
+    let feedTypeName=loc.pathname.split("/")[1];
+    // const qArray = [
+    //     "How would you rate your overall satisfaction with the program/institution so far?",
+    //     "How would you rate the quality of instruction and teaching during your time in the program/institution?",
+    //     "How would you rate the relevance and usefulness of the program/institution to your current professional goals?",
+    //     "How would you rate the level of support and guidance provided by the program/institution so far?",
+    //     "How well has the program/institution prepared you for your career or further studies?",
+    //     // Add more questions here
+    // ];
 
-    const qArray = [
-        "How would you rate your overall satisfaction with the program/institution so far?",
-        "How would you rate the quality of instruction and teaching during your time in the program/institution?",
-        "How would you rate the relevance and usefulness of the program/institution to your current professional goals?",
-        "How would you rate the level of support and guidance provided by the program/institution so far?",
-        "How well has the program/institution prepared you for your career or further studies?",
-        // Add more questions here
-    ];
+    useEffect(()=>{
+        axios
+            .get("http://localhost:5656/getQarray/"+feedTypeName)
+            .then(res=>{
+                setqArray(res.data)
+            });
+    },qArray)
 
     const handleForm = (e) => {
         const name = e.target.name;
